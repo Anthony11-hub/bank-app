@@ -12,13 +12,15 @@
     <template id="login">
         <h1>Bank App</h1>
         <section>
-            <a href="/dashboard">Login</a>
+            <a href="/dashboard" onclick="onLinkClick(event)">Login</a>
+            <!-- The event captures the click event and passes it to our onLinkClick -->
         </section>
     </template>
     <template id="dashboard">
         <header>
           <h1>Bank App</h1>
-          <a href="/login">Logout</a>
+          <a href="/login" onclick="onLinkClick(event)">Logout</a>
+          <!-- using the onclick attribute bindthe click event to js code, here the call to the navigate() fn -->
         </header>
         <section>
           Balance: 100$
