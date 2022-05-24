@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bank App</title>
+    <script src="./app.js" defer></script>
 </head>
 <body>
     <div id="app">loading...</div>
@@ -38,6 +39,16 @@
             <tbody></tbody>
           </table>
         </section>
+        <a href="/credits" onclick="onLinkClick(event)">credits</a>
+      </template>
+      <template id="credits">
+        <h3>Credits for the app</h3>
+        <p>Code author: Anthony Mwaura</p>
+        <p>Language used: HTML, CSS, JAVASCRIPT</p>
+        <p>Code Editor: Visual Studio code</p>
+        <p>Location: Chuka Campus Grounds</p>
+        <p>This app attempts to show how powerful templates can be, I don't have to change the URL path</p>
+        <a href="/dashboard" onclick="onLinkClick(event)">Dashboard</a>
       </template>
 </body>
 </html>

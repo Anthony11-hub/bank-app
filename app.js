@@ -5,6 +5,7 @@
 const routes = {
     '/login': { templateId: 'login' },
     '/dashboard': { templateId: 'dashboard' },
+    '/credits': { templateId: 'credits' }
 };
 
 /**This fn instanstiates the template with the id templateId and put its cloned
@@ -47,3 +48,11 @@ function onLinkClick(event){
     event.preventDefault();
     navigate(event.target.href);
 }
+
+/**
+ * makes sure that the displayed template is updated when browser history changes
+ *
+ */
+window.onpopstate = () => updateRoute();
+updateRoute();
+
