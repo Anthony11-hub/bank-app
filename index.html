@@ -24,9 +24,27 @@
           <!-- using the onclick attribute bindthe click event to js code, here the call to the navigate() fn -->
         </header>
         <section>
-          Balance: 100$
+          <h2>Login</h2>
+          <form id="loginform">
+            <label for="username">Username</label>
+            <input id="username" name="user" type="text">
+            <button>Login</button>
+          </form>
+          <hr/>
+          <h2>Register</h2>
+          <form id="registerform" action="//localhost:5000/api/accounts" method="POST">
+            <label for="user">Username</label>
+            <input id="user" name="user" type="text">
+            <label for="currency">Currency</label>
+            <input id="currency" name="currency" type="text" value="$">
+            <label for="description">Description</label>
+            <input id="description" name="description" type="text">
+            <label for="balance">Current Balance</label>
+            <input type="number" id="balance" name="balance" value="0">
+            <button>Register</button>
+          </form>
         </section>
-        <section>
+        <!-- <section>
           <h2>Transactions</h2>
           <table>
             <thead>
@@ -38,7 +56,7 @@
             </thead>
             <tbody></tbody>
           </table>
-        </section>
+        </section> -->
         <a href="/credits" onclick="onLinkClick(event)">credits</a>
       </template>
       <template id="credits">
