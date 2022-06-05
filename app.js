@@ -1,3 +1,5 @@
+let account = null;
+
 /**
  * simple object to implement a map between URL paths and our templates
  */
@@ -61,6 +63,9 @@ async function register() {
     }
 
     console.log('Account created!', result);
+
+    account = result;
+    navigate('/dashboard');
 }
 
 async function createAccount(account) {//async function--code that will execute asynchronously
@@ -72,6 +77,28 @@ async function createAccount(account) {//async function--code that will execute 
       });
       return await response.json();//to parse JSON content and return resulting object
       //this method is asynchronous so we use await here b4 returning to make sure any errors during parsing are also caught
+    } catch (error) {
+      return { error: error.message || 'Unknown error' };
+    }
+}
+
+async function login(){
+    const loginForm = document.getElementById('loginForm');
+    const user = loginForm.user.value;
+    const data = await getAccount(user);
+
+    if(data.error){
+        return console.log('loginError', data.error);
+    }
+
+    account = data;
+    navigate('/dashboard');
+}
+
+async function getAccount(user) {
+    try {
+      const response = await fetch('//localhost:5000/api/accounts/' + encodeURIComponent(user));
+      return await response.json();
     } catch (error) {
       return { error: error.message || 'Unknown error' };
     }
