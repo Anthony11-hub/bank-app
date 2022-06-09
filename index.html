@@ -12,36 +12,42 @@
 <body>
     <div id="app">loading...</div>
     <template id="login">
+      <div class="heading">
         <h1>Bank App</h1>
-        <section>
-            <a href="/dashboard" onclick="onLinkClick(event)">Login</a>
-            <!-- The event captures the click event and passes it to our onLinkClick -->
-        </section>
+      </div>
+      <section>
+          <a href="/dashboard" onclick="onLinkClick(event)">Login</a>
+          <!-- The event captures the click event and passes it to our onLinkClick -->
+      </section>
     </template>
     <template id="dashboard">
         <header>
-          <h1>Bank App</h1>
+          <h1 class="heading">Bank App</h1>
           <a href="/login" onclick="onLinkClick(event)">Logout</a>
           <!-- using the onclick attribute bindthe click event to js code, here the call to the navigate() fn -->
         </header>
         <section>
-          <h2>Login</h2>
-          <form id="loginform" action="javascript:login()">
-            <label for="username">Username</label>
-            <input id="username" name="user" type="text">
-            <button>Login</button>
-          </form>
-          <hr/>
+          <div class="login-box">
+            <h2>Login</h2>
+            <form id="loginform" action="javascript:login()">
+              <div class="user-box">
+                <label for="username">Username</label>
+                <input id="username" name="user" type="text">
+              </div>
+              
+              <button>Login</button>
+            </form>
+          </div>
           <div class="register-box">
             <h2>Register</h2>
             <form id="registerForm" action="javascript:register()">
               <div class="user-box">
-                <label for="user">Username (required)</label>
+                <label for="user">Username </label>
                 <input id="user" name="user" type="text" maxlength="20" required>
               </div>
               
               <div class="user-box">
-                <label for="currency">Currency (required)</label>
+                <label for="currency">Currency </label>
                 <input id="currency" name="currency" type="text" value="$" maxlength="5" required>
               </div>
               
